@@ -1,8 +1,8 @@
 apiVersion: v1
-kind: pod
+kind: Pod
 metadata:
-  Name: simple-pod
-  Namespace: roboshop
+  name: simple-pod
+  namespace: roboshop
 spec:
  containers:
  -  name: nginx-simple
