@@ -1,7 +1,7 @@
 apiVersion: v1
 kind: Pod
 metadata:
-- name: config-pod
+  name: config-pod
 spec:
   containers:
   - name: config-pod
@@ -10,8 +10,8 @@ spec:
     - name: COURSE
       valueFrom:
         configMapKeyRef:
-        name: course-config
-        key: COURSE
+          name: course-config
+          key: COURSE
     - name: PERSON
       valueFrom:
         configMapKeyRef:
