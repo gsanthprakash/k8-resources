@@ -5,7 +5,6 @@ metadata:
   annotations: 
     com.project.author: gsp
     com.project.name: roboshop
-    app: nginx
 spec:
  containers:
  -  name: nginx-labels
