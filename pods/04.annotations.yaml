@@ -1,0 +1,14 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: labels
+  annotations: 
+    com.project.author: gsp
+    com.project.name: roboshop
+    app: nginx
+spec:
+ containers:
+ -  name: nginx-labels
+    image: nginx
+    ports:
+    - containerPort: 80
