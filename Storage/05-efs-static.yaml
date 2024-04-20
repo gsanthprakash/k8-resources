@@ -21,10 +21,10 @@ metadata:
 spec:
   accessModes:
   - ReadWriteOnce
+  storageClassName: ""
   resources:
     requests:
       storage: 5Gi
-  storageClassName: ""
 ---
 apiVersion: apps/v1
 kind: Deployment
