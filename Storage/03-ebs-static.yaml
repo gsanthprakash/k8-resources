@@ -9,4 +9,4 @@ spec:
     fsType: ext4
     volumeID: vol-0a717dd0b96733d37
   capacity:
-    storage:20Gi
+    storage: 20Gi
