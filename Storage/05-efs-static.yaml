@@ -8,8 +8,8 @@ spec:
   volumeMode: Filesystem
   accessModes:
     - ReadWriteOnce
-  persistentVolumeReclaimPolicy: Retain
   storageClassName: ""
+  persistentVolumeReclaimPolicy: Retain
   csi:
     driver: efs.csi.aws.com
     volumeHandle: fs-0dda4f19cdaccc312
@@ -20,7 +20,7 @@ metadata:
   name: efs-static-pvc
 spec:
   accessModes:
-  - ReadWriteOnce
+    - ReadWriteOnce
   storageClassName: ""
   resources:
     requests:
@@ -30,16 +30,16 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: nginx-deployment
-  labels:
+  labels: # these labels belong to deployment
     app: nginx
 spec:
   replicas: 1
   selector:
-    matchLabels:
+    matchLabels: # these labels should match with pod
       app: nginx
       project: roboshop
       component: frontend
-  template:
+  template: # this is the pod definition
     metadata:
       labels:
         app: nginx
@@ -52,9 +52,9 @@ spec:
         ports:
         - containerPort: 80
         volumeMounts:
-        - name: nginx-html
-          mountPath: "/usr/share/nginx/html"
+        - mountPath: "/usr/share/nginx/html"
+          name: nginx-html
       volumes:
       - name: nginx-html
-        persistentVolumeClaim:
-          claimName: efs-static-pvc 
+        persistentVolumeClaim: # this is the PVC
+          claimName: efs-static-pvc
