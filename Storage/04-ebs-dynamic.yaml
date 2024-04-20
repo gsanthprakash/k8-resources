@@ -15,7 +15,7 @@ kind: PersistentVolumeClaim
 metadata:
   name: ebs-dynamic-pvc
 spec:
-  storageClassName: ""
+  storageClassName: ebs-sc
   accessModes:
     - ReadWriteOnce
   resources:
@@ -53,4 +53,4 @@ spec:
       volumes:
       - name: nginx-html
         persistentVolumeClaim:
-          claimName: ebs-dynamic-pvc 
+          claimName: ebs-dynamic-pvc
