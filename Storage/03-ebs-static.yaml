@@ -3,6 +3,7 @@ kind: PersistentVolume
 metadata:
   name: ebs-static
 spec:
+  storageClassName: ""
   accessModes:
     - ReadWriteOnce
   awsElasticBlockStore:
@@ -10,19 +11,19 @@ spec:
     volumeID: vol-09dd25a32aaa703c0
   capacity:
     storage: 25Gi
-  storageClassName: ""
+  
 ---
 apiVersion: v1
 kind: PersistentVolumeClaim
 metadata:
   name: ebs-static-pvc
 spec:
+  storageClassName: ""
   accessModes:
-    - ReadWriteOnce
+    - ReadWriteMany
   resources:
     requests:
       storage: 8Gi
-  storageClassName: ""
 ---
 apiVersion: apps/v1
 kind: Deployment
